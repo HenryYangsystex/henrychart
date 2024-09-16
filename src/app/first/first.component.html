@@ -1,0 +1,54 @@
+<div class="grid">
+  <div class="col-3 pt-0">
+    <div class="text-center border-round-sm font-bold">
+      <div class="flex justify-content-center">
+        <p-menu [model]="items" />
+      </div>
+    </div>
+  </div>
+  <div class="col-9 bg-gray-100 pt-0 pl-0">
+    <div class="border-round-sm">
+      <p-panel [showHeader]="false">
+        <p>Dashboard</p>
+      </p-panel>
+    </div>
+    <div class="grid">
+      <div class="col-8">
+        <p-panel class="p-3" header="Today's Sales">
+          <p>Dashboard</p>
+        </p-panel>
+      </div>
+      <div class="col-4">
+        <p-panel class="p-3" header="Vistor Insights">
+          <p>Dashboard</p>
+        </p-panel>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-5">
+        <p-panel class="p-3" header="Total Revenue">
+          <p>Dashboard</p>
+        </p-panel>
+      </div>
+      <div class="col-7">
+        <p-panel class="p-3" header="Customer Satisfaction">
+          <p>Dashboard</p>
+        </p-panel>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-9">
+        <p-panel class="p-3" header="Top Products">
+          <p>Dashboard</p>
+        </p-panel>
+      </div>
+      <div class="col-3">
+        <p-panel class="p-3" header="Hire vs Cancel">
+          <div class="card flex justify-content-center">
+            <p-chart type="doughnut" [data]="data" [options]="options" />
+          </div>
+        </p-panel>
+      </div>
+    </div>
+  </div>
+</div>

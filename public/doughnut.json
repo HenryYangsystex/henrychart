@@ -1,0 +1,26 @@
+{
+    "labels": [
+        "A",
+        "B",
+        "C"
+    ],
+    "datasets": [
+        {
+            "data": [
+                300,
+                50,
+                100
+            ],
+            "backgroundColor": [
+                "#3b82f6",
+                "#f59e0b",
+                "#10b981"
+            ],
+            "hoverBackgroundColor": [
+                "#60a5fa",
+                "#fbbf24",
+                "#34d399"
+            ]
+        }
+    ]
+}
