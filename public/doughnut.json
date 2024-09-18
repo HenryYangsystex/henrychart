@@ -1,8 +1,8 @@
 {
     "labels": [
-        "A",
-        "B",
-        "C"
+        "Total Hired",
+        "Total Canceled",
+        "Total Pending"
     ],
     "datasets": [
         {

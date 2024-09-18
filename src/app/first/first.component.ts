@@ -9,6 +9,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
 @Component({
   selector: 'app-first',
   standalone: true,
@@ -21,23 +24,34 @@ import { ProgressBarModule } from 'primeng/progressbar';
     TableModule,
     CommonModule,
     ProgressBarModule,
+    InputTextModule,
+    IconFieldModule,
+    InputIconModule,
   ],
   templateUrl: './first.component.html',
   styleUrl: './first.component.scss',
 })
 export class FirstComponent {
+  visitorData: any;
+  visitorOptions: any;
+  customerData: any;
+  customerOptions: any;
   items: MenuItem[] | undefined;
   doughnutData: any;
   doughnutOptions: any;
-  data: any;
+  verticalBarData: any;
   cols!: any[];
-  options: any;
+  verticalBarOptions: any;
   tableData = [
-    { code: 'A001', name: 'Product 1', category: 10, quantity: 10 },
-    { code: 'A002', name: 'Product 2', category: 20, quantity: 20 },
-    { code: 'A003', name: 'Product 3', category: 30, quantity: 15 },
-    { code: 'A004', name: 'Product 4', category: 40, quantity: 12 },
-    { code: 'A005', name: 'Product 5', category: 50, quantity: 30 },
+    { id: '01', name: 'Home Decor Range', popularity: 80, sales: 45 },
+    {
+      id: '02',
+      name: 'Disney Princess Pink Bag 18',
+      popularity: 60,
+      sales: 29,
+    },
+    { id: '03', name: 'Bathroom Essentials', popularity: 50, sales: 18 },
+    { id: '04', name: 'Apple Smartwatches', popularity: 35, sales: 25 },
   ];
 
   constructor(
@@ -47,10 +61,10 @@ export class FirstComponent {
 
   ngOnInit() {
     this.cols = [
-      { field: 'code', header: 'Code' },
+      { field: 'id', header: '#' },
       { field: 'name', header: 'Name' },
       { field: 'popularity', header: 'Popularity' },
-      { field: 'quantity', header: 'Quantity' },
+      { field: 'sales', header: 'Sales' },
     ];
     this.items = [
       { label: 'New', icon: 'pi pi-plus' },
@@ -70,40 +84,41 @@ export class FirstComponent {
         this.doughnutData = data;
       });
 
-      // this.dataService.getVerticalBarData().subscribe((data) => {
-      //   this.data = data;
-      // });
+      this.dataService.getVerticalBarData().subscribe((data) => {
+        this.verticalBarData = data;
+        this.verticalBarData.datasets.forEach((dataset: any) => {
+          dataset.backgroundColor = documentStyle.getPropertyValue(
+            dataset.backgroundColor,
+          );
+          dataset.borderColor = documentStyle.getPropertyValue(
+            dataset.borderColor,
+          );
+        });
+      });
 
-      this.data = {
-        labels: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-        ],
-        datasets: [
-          {
-            label: 'My First dataset',
-            backgroundColor: documentStyle.getPropertyValue('--blue-500'),
-            borderColor: documentStyle.getPropertyValue('--blue-500'),
-            data: [65, 59, 80, 81, 56, 55, 40],
-          },
-          {
-            label: 'My Second dataset',
-            backgroundColor: documentStyle.getPropertyValue('--pink-500'),
-            borderColor: documentStyle.getPropertyValue('--pink-500'),
-            data: [28, 48, 40, 19, 86, 27, 90],
-          },
-        ],
-      };
+      this.dataService.getCustomerData().subscribe((data) => {
+        this.customerData = data;
+        this.customerData.datasets.forEach((dataset: any) => {
+          dataset.borderColor = documentStyle.getPropertyValue(
+            dataset.backgroundColor,
+          );
+        });
+      });
+
+      this.dataService.getVisitorData().subscribe((data) => {
+        this.visitorData = data;
+        this.visitorData.datasets.forEach((dataset: any) => {
+          dataset.borderColor = documentStyle.getPropertyValue(
+            dataset.borderColor,
+          );
+        });
+      });
 
       this.doughnutOptions = {
         cutout: '60%',
         plugins: {
           legend: {
+            position: 'bottom',
             labels: {
               color: textColor,
             },
@@ -111,11 +126,12 @@ export class FirstComponent {
         },
       };
 
-      this.options = {
+      this.verticalBarOptions = {
         maintainAspectRatio: false,
-        aspectRatio: 0.8,
+        aspectRatio: 1,
         plugins: {
           legend: {
+            position: 'bottom',
             labels: {
               color: textColor,
             },
@@ -128,6 +144,72 @@ export class FirstComponent {
               font: {
                 weight: 500,
               },
+            },
+            grid: {
+              color: surfaceBorder,
+              drawBorder: false,
+            },
+          },
+          y: {
+            ticks: {
+              color: textColorSecondary,
+            },
+            grid: {
+              color: surfaceBorder,
+              drawBorder: false,
+            },
+          },
+        },
+      };
+
+      this.customerOptions = {
+        maintainAspectRatio: false,
+        aspectRatio: 1,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: textColor,
+            },
+          },
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: textColorSecondary,
+            },
+            grid: {
+              color: surfaceBorder,
+              drawBorder: false,
+            },
+          },
+          y: {
+            ticks: {
+              color: textColorSecondary,
+            },
+            grid: {
+              color: surfaceBorder,
+              drawBorder: false,
+            },
+          },
+        },
+      };
+
+      this.visitorOptions = {
+        maintainAspectRatio: false,
+        aspectRatio: 1,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: textColor,
+            },
+          },
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: textColorSecondary,
             },
             grid: {
               color: surfaceBorder,

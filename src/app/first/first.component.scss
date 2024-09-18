@@ -1,1 +1,54 @@
+::ng-deep .p-card {
+  .p-card-body {
+    // background-color: #e63b3b; // Change background color
+    color: #333; // Change text color
+    // padding: 20px; // Add padding if needed
+    height: 184px;
+  }
 
+  .p-card-content {
+    // font-size: 16px; // Change font size
+    font-weight: bold; // Make content bold
+    height: 150px;
+    font-size: 12px;
+  }
+}
+
+::ng-deep .p-panel {
+  .p-panel-content {
+    height: 348px;
+  }
+}
+
+::ng-deep .header-panel {
+  .p-panel-content {
+    height: 100px;
+  }
+}
+
+::ng-deep .p-card-1 {
+  .p-card-body {
+    background-color: #ffd0ce;
+  }
+}
+::ng-deep .p-card-2 {
+  .p-card-body {
+    background-color: #feddc7;
+  }
+}
+::ng-deep .p-card-3 {
+  .p-card-body {
+    background-color: #caf1d8;
+  }
+}
+::ng-deep .p-card-4 {
+  .p-card-body {
+    background-color: #ead6fd;
+  }
+}
+::ng-deep .p-progressbar {
+  height: 5px; /* Adjust the height as needed */
+}
+::ng-deep .p-progressbar-value {
+  background-color: #4caf50;
+}
