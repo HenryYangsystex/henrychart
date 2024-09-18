@@ -14,20 +14,50 @@
     </div>
     <div class="grid">
       <div class="col-8">
-        <p-panel class="p-3" header="Today's Sales">
-          <p>Dashboard</p>
+        <p-panel class="p-3" [showHeader]="false">
+          <div class="flex justify-content-between align-items-center">
+            <h3 class="m-0">Today's Sales</h3>
+            <button pButton label="Submit" icon="pi pi-check"></button>
+          </div>
+          <p>Sales Summary</p>
+          <div class="grid">
+            <p-card class="col-3">
+              <i class="pi pi-check"></i>
+              <h3>$1k</h3>
+              <p class="m-0">Total Sales</p>
+              <p class="m-0">+8% from yesterday</p>
+            </p-card>
+            <p-card class="col-3">
+              <i class="pi pi-check"></i>
+              <h3>300</h3>
+              <p class="m-0">Total Order</p>
+              <p class="m-0">+5% from yesterday</p>
+            </p-card>
+            <p-card class="col-3">
+              <i class="pi pi-check"></i>
+              <h3>5</h3>
+              <p class="m-0">Product Sold</p>
+              <p class="m-0">+1.2% from yesterday</p>
+            </p-card>
+            <p-card class="col-3">
+              <i class="pi pi-check"></i>
+              <h3>8</h3>
+              <p class="m-0">New Customer</p>
+              <p class="m-0">+0.5% from yesterday</p>
+            </p-card>
+          </div>
         </p-panel>
       </div>
       <div class="col-4">
-        <p-panel class="p-3" header="Vistor Insights">
-          <p>Dashboard</p>
-        </p-panel>
+        <p-panel class="p-3" header="Vistor Insights"> </p-panel>
       </div>
     </div>
     <div class="grid">
       <div class="col-5">
         <p-panel class="p-3" header="Total Revenue">
-          <p>Dashboard</p>
+          <div class="card flex justify-content-center">
+            <p-chart type="bar" [data]="data" [options]="options" />
+          </div>
         </p-panel>
       </div>
       <div class="col-7">
@@ -39,13 +69,47 @@
     <div class="grid">
       <div class="col-9">
         <p-panel class="p-3" header="Top Products">
-          <p>Dashboard</p>
+          <p-table
+            [columns]="cols"
+            [value]="tableData"
+            [tableStyle]="{ 'min-width': '50rem' }"
+          >
+            <ng-template pTemplate="header" let-columns>
+              <tr>
+                <th *ngFor="let col of columns">
+                  {{ col.header }}
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+              <tr>
+                <td *ngFor="let col of columns">
+                  <ng-container
+                    *ngIf="col.field !== 'popularity' || col.field !== ''"
+                  >
+                    {{ rowData[col.field] }}
+                  </ng-container>
+                  <ng-container *ngIf="col.field === 'popularity'">
+                    <p-progressBar [value]="50">
+                      <ng-template pTemplate="content" let-value>
+                        <span>{{ value }}/100</span>
+                      </ng-template>
+                    </p-progressBar>
+                  </ng-container>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
         </p-panel>
       </div>
       <div class="col-3">
         <p-panel class="p-3" header="Hire vs Cancel">
           <div class="card flex justify-content-center">
-            <p-chart type="doughnut" [data]="data" [options]="options" />
+            <p-chart
+              type="doughnut"
+              [data]="doughnutData"
+              [options]="doughnutOptions"
+            />
           </div>
         </p-panel>
       </div>

@@ -11,4 +11,7 @@ export class DataService {
   getMenuItems(): Observable<any> {
     return this.http.get('/doughnut.json');
   }
+  getVerticalBarData(): Observable<any> {
+    return this.http.get('/verticalbar.json');
+  }
 }
