@@ -1,40 +1,42 @@
 <div class="grid">
   <div class="col-2">
-    <div class="flex justify-content-center py-4">
-      <!-- TODO圖先隨便放 -->
-      <img src="https://fakeimg.pl/50x50/200" />
-      <div class="align-self-center ml-3 text-2xl font-bold">Dabang</div>
-    </div>
+    <div class="top-0 fixed">
+      <div class="flex justify-content-center py-4">
+        <!-- TODO圖先隨便放 -->
+        <img src="https://fakeimg.pl/50x50/200" />
+        <div class="align-self-center ml-3 text-2xl font-bold">Dabang</div>
+      </div>
 
-    <!-- SideBar Item -->
-    <div class="py-4">
-      <div class="py-2" *ngFor="let item of items; let first = first">
-        <div
-          class="flex justify-content-center items-center"
-          [class]="
-            first ? 'bg-primary py-3 mx-6 border-round-2xl' : 'py-3 mx-6'
-          "
-        >
-          <a
-            class="no-underline cursor-pointer flex items-center"
-            [class]="first ? 'text-white' : 'side-bar-item-font'"
+      <!-- SideBar Item -->
+      <div class="py-4">
+        <div class="py-2" *ngFor="let item of items; let first = first">
+          <div
+            class="flex justify-content-center items-center"
+            [class]="
+              first ? 'bg-primary py-3 mx-6 border-round-2xl' : 'py-3 mx-6'
+            "
           >
-            <i [class]="item.icon + ' mr-2'"></i>
-            <span>{{ item.label }}</span>
-          </a>
+            <a
+              class="no-underline cursor-pointer flex items-center"
+              [class]="first ? 'text-white' : 'side-bar-item-font'"
+            >
+              <i [class]="item.icon + ' mr-2'"></i>
+              <span>{{ item.label }}</span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- TODO圖先隨便放 -->
-    <div class="py-5">
-      <div class="flex justify-content-center">
-        <img src="https://fakeimg.pl/200x200/200" />
+      <!-- TODO圖先隨便放 -->
+      <div class="py-5">
+        <div class="flex justify-content-center">
+          <img src="https://fakeimg.pl/200x200/200" />
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="col-10 p-0">
+  <div class="col-10 p-0 bg-gray-100">
     <app-first />
   </div>
 </div>
