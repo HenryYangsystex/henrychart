@@ -14,4 +14,12 @@ export class DataService {
   getVerticalBarData(): Observable<any> {
     return this.http.get('/verticalbar.json');
   }
+
+  getCustomerData(): Observable<any> {
+    return this.http.get('/customer.json');
+  }
+
+  getVisitorData(): Observable<any> {
+    return this.http.get('/visitor.json');
+  }
 }
