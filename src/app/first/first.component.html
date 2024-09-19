@@ -13,7 +13,11 @@
     <div class="col-7">
       <p-panel class="p-3" [showHeader]="false">
         <div class="flex justify-content-between align-items-center">
-          <h3 class="m-0">Today's Sales</h3>
+          <div>
+            <h3 class="m-0">Today's Sales</h3>
+            <p>Sales Summary</p>
+          </div>
+
           <button
             class="upload"
             pButton
@@ -21,7 +25,6 @@
             icon="pi pi-upload"
           ></button>
         </div>
-        <p>Sales Summary</p>
         <div class="grid">
           <p-card class="col-3 p-card-1" [style]="{ height: '150px' }">
             <i

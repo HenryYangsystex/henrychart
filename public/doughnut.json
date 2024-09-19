@@ -13,12 +13,12 @@
             ],
             "backgroundColor": [
                 "#3b82f6",
-                "#f59e0b",
+                "#ff3d32",
                 "#10b981"
             ],
             "hoverBackgroundColor": [
                 "#60a5fa",
-                "#fbbf24",
+                "#ffd0ce",
                 "#34d399"
             ]
         }

@@ -1,14 +1,14 @@
 ::ng-deep .p-card {
+  border-radius: 12px;
   .p-card-body {
     color: #333;
     height: 184px;
   }
 
   .p-card-content {
-    // font-weight: bold;
     height: 150px;
     font-size: 12px;
-    // font-size: 12px;
+
     .heading {
       font-weight: bold;
     }
@@ -34,29 +34,41 @@
     height: 100px;
   }
 }
-
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  background-color: #ffffff !important;
+  // border: none !important;
+  font-weight: normal;
+  color: #96a5b8;
+}
+::ng-deep .p-datatable .p-datatable-tbody > tr {
+  border: 1px solid #96a5b8;
+}
 ::ng-deep .p-card-1 {
   .p-card-body {
     background-color: #ffd0ce;
+    border-radius: 12px;
   }
 }
 ::ng-deep .p-card-2 {
   .p-card-body {
     background-color: #feddc7;
+    border-radius: 12px;
   }
 }
 ::ng-deep .p-card-3 {
   .p-card-body {
     background-color: #caf1d8;
+    border-radius: 12px;
   }
 }
 ::ng-deep .p-card-4 {
   .p-card-body {
     background-color: #ead6fd;
+    border-radius: 12px;
   }
 }
 ::ng-deep .p-progressbar {
-  height: 5px; /* Adjust the height as needed */
+  height: 5px;
 }
 ::ng-deep .p-progressbar-value {
   background-color: #4caf50;
@@ -97,29 +109,27 @@
     background-color: #fba86f;
   }
 }
-// .p-button {
-//   background-color: black;
-// }
+
 ::ng-deep .button1 {
-  background-color: #d0e1fd;
+  background-color: #f5f9ff;
   border: 2px solid #85b2f9;
   color: #85b2f9;
   height: 20px;
 }
 ::ng-deep .button2 {
-  background-color: #caf1d8;
+  background-color: #f4fcf7;
   border: 2px solid #76db9b;
   color: #76db9b;
   height: 20px;
 }
 ::ng-deep .button3 {
-  background-color: #ead6fd;
+  background-color: #fbf7ff;
   border: 2px solid #c996fa;
   color: #c996fa;
   height: 20px;
 }
 ::ng-deep .button4 {
-  background-color: #feddc7;
+  background-color: #fff8f3;
   border: 2px solid #fba86f;
   color: #fba86f;
   height: 20px;

@@ -12,34 +12,34 @@
         {
             "label": "Last Month",
             "data": [
-                65,
-                59,
-                80,
-                81,
-                56,
-                55,
-                40
+                20,
+                45,
+                30,
+                21,
+                36,
+                45,
+                14
             ],
             "fill": true,
             "borderColor": "--blue-500",
             "tension": 0.4,
-            "backgroundColor": "--blue-100"
+            "backgroundColor": "--blue-50"
         },
         {
             "label": "This Month",
             "data": [
-                28,
-                48,
-                40,
-                19,
+                58,
+                78,
+                55,
+                64,
                 86,
-                27,
+                77,
                 90
             ],
             "fill": true,
             "borderColor": "--green-500",
             "tension": 0.4,
-            "backgroundColor": "--green-100"
+            "backgroundColor": "--green-50"
         }
     ]
 }

@@ -1,12 +1,16 @@
 {
     "labels": [
-        "January",
-        "February",
-        "March",
-        "April",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
         "May",
-        "June",
-        "July"
+        "Jun",
+        "Jul",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Des"
     ],
     "datasets": [
         {
@@ -18,7 +22,12 @@
                 81,
                 56,
                 55,
-                40
+                40,
+                65,
+                59,
+                80,
+                81,
+                56
             ],
             "fill": false,
             "borderColor": "--blue-500",
@@ -33,7 +42,12 @@
                 19,
                 86,
                 27,
-                90
+                90,
+                48,
+                40,
+                19,
+                86,
+                27
             ],
             "fill": false,
             "borderColor": "--pink-500",
@@ -48,7 +62,12 @@
                 19,
                 66,
                 27,
-                90
+                90,
+                38,
+                8,
+                40,
+                19,
+                66
             ],
             "fill": false,
             "borderColor": "--green-500",

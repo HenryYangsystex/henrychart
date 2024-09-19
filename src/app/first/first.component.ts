@@ -144,6 +144,8 @@ export class FirstComponent {
         },
         scales: {
           x: {
+            // barPercentage: 2,
+            // categoryPercentage: 0.5,
             ticks: {
               color: textColorSecondary,
               font: {
@@ -151,8 +153,7 @@ export class FirstComponent {
               },
             },
             grid: {
-              color: surfaceBorder,
-              drawBorder: false,
+              display: false,
             },
           },
           y: {
@@ -181,20 +182,18 @@ export class FirstComponent {
         scales: {
           x: {
             ticks: {
-              color: textColorSecondary,
+              display: false,
             },
             grid: {
-              color: surfaceBorder,
-              drawBorder: false,
+              display: false,
             },
           },
           y: {
             ticks: {
-              color: textColorSecondary,
+              display: false,
             },
             grid: {
-              color: surfaceBorder,
-              drawBorder: false,
+              display: false,
             },
           },
         },
@@ -217,8 +216,7 @@ export class FirstComponent {
               color: textColorSecondary,
             },
             grid: {
-              color: surfaceBorder,
-              drawBorder: false,
+              display: false,
             },
           },
           y: {
