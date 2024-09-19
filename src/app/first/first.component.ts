@@ -12,6 +12,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
+
 @Component({
   selector: 'app-first',
   standalone: true,
@@ -100,6 +101,9 @@ export class FirstComponent {
         this.customerData = data;
         this.customerData.datasets.forEach((dataset: any) => {
           dataset.borderColor = documentStyle.getPropertyValue(
+            dataset.borderColor,
+          );
+          dataset.backgroundColor = documentStyle.getPropertyValue(
             dataset.backgroundColor,
           );
         });
@@ -127,6 +131,7 @@ export class FirstComponent {
       };
 
       this.verticalBarOptions = {
+        responsive: true,
         maintainAspectRatio: false,
         aspectRatio: 1,
         plugins: {
@@ -228,5 +233,23 @@ export class FirstComponent {
         },
       };
     }
+  }
+
+  getClasses(id: any): any {
+    return {
+      progressbar1: id === '01',
+      progressbar2: id === '02',
+      progressbar3: id === '03',
+      progressbar4: id === '04',
+    };
+  }
+
+  getButtonClasses(id: any): any {
+    return {
+      button1: id === '01',
+      button2: id === '02',
+      button3: id === '03',
+      button4: id === '04',
+    };
   }
 }

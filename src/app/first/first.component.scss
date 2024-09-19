@@ -1,16 +1,25 @@
 ::ng-deep .p-card {
   .p-card-body {
-    // background-color: #e63b3b; // Change background color
-    color: #333; // Change text color
-    // padding: 20px; // Add padding if needed
+    color: #333;
     height: 184px;
   }
 
   .p-card-content {
-    // font-size: 16px; // Change font size
-    font-weight: bold; // Make content bold
+    // font-weight: bold;
     height: 150px;
     font-size: 12px;
+    // font-size: 12px;
+    .heading {
+      font-weight: bold;
+    }
+    .middlecontent {
+      font-weight: bold;
+    }
+
+    .bluetext {
+      color: blue;
+      font-size: 10px;
+    }
   }
 }
 
@@ -51,4 +60,74 @@
 }
 ::ng-deep .p-progressbar-value {
   background-color: #4caf50;
+}
+
+::ng-deep .progressbar1 {
+  .p-progressbar {
+    background-color: #d0e1fd;
+  }
+  .p-progressbar-value {
+    background-color: #85b2f9;
+  }
+}
+
+::ng-deep .progressbar2 {
+  .p-progressbar {
+    background-color: #caf1d8;
+  }
+  .p-progressbar-value {
+    background-color: #76db9b;
+  }
+}
+
+::ng-deep .progressbar3 {
+  .p-progressbar {
+    background-color: #ead6fd;
+  }
+  .p-progressbar-value {
+    background-color: #c996fa;
+  }
+}
+
+::ng-deep .progressbar4 {
+  .p-progressbar {
+    background-color: #feddc7;
+  }
+  .p-progressbar-value {
+    background-color: #fba86f;
+  }
+}
+// .p-button {
+//   background-color: black;
+// }
+::ng-deep .button1 {
+  background-color: #d0e1fd;
+  border: 2px solid #85b2f9;
+  color: #85b2f9;
+  height: 20px;
+}
+::ng-deep .button2 {
+  background-color: #caf1d8;
+  border: 2px solid #76db9b;
+  color: #76db9b;
+  height: 20px;
+}
+::ng-deep .button3 {
+  background-color: #ead6fd;
+  border: 2px solid #c996fa;
+  color: #c996fa;
+  height: 20px;
+}
+::ng-deep .button4 {
+  background-color: #feddc7;
+  border: 2px solid #fba86f;
+  color: #fba86f;
+  height: 20px;
+}
+
+.upload {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
 }

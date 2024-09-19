@@ -1,16 +1,16 @@
 {
     "labels": [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July"
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
     ],
     "datasets": [
         {
-            "label": "My First dataset",
+            "label": "Online Sales",
             "backgroundColor": "--blue-500",
             "borderColor": "--blue-500",
             "data": [
@@ -24,7 +24,7 @@
             ]
         },
         {
-            "label": "My Second dataset",
+            "label": "Offline Sales",
             "backgroundColor": "--green-500",
             "borderColor": "--green-500",
             "data": [

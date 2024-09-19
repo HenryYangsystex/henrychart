@@ -14,39 +14,44 @@
       <p-panel class="p-3" [showHeader]="false">
         <div class="flex justify-content-between align-items-center">
           <h3 class="m-0">Today's Sales</h3>
-          <button pButton label="Submit" icon="pi pi-check"></button>
+          <button
+            class="upload"
+            pButton
+            label="Export"
+            icon="pi pi-upload"
+          ></button>
         </div>
         <p>Sales Summary</p>
         <div class="grid">
           <p-card class="col-3 p-card-1" [style]="{ height: '150px' }">
             <i
-              class="pi pi-chart-bar bg-red-500 text-white p-3 border-circle p-0"
+              class="pi pi-chart-bar bg-red-500 text-white p-3 border-circle"
             ></i>
-            <h3>$1k</h3>
-            <p class="m-0">Total Sales</p>
-            <p class="m-0">+8% from yesterday</p>
+            <h3 class="m-2 heading">$1k</h3>
+            <p class="m-2 middlecontent">Total Sales</p>
+            <p class="m-2 bluetext">+8% from yesterday</p>
           </p-card>
           <p-card class="col-3 p-card-2">
             <i
               class="pi pi-file bg-orange-500 text-white p-3 border-circle"
             ></i>
-            <h3>300</h3>
-            <p class="m-0">Total Order</p>
-            <p class="m-0">+5% from yesterday</p>
+            <h3 class="m-2 heading">300</h3>
+            <p class="m-2 middlecontent">Total Order</p>
+            <p class="m-2 bluetext">+5% from yesterday</p>
           </p-card>
           <p-card class="col-3 p-card-3">
             <i class="pi pi-tag bg-green-500 text-white p-3 border-circle"></i>
-            <h3>5</h3>
-            <p class="m-0">Product Sold</p>
-            <p class="m-0">+1.2% from yesterday</p>
+            <h3 class="m-2 heading">5</h3>
+            <p class="m-2 middlecontent">Product Sold</p>
+            <p class="m-2 bluetext">+1.2% from yesterday</p>
           </p-card>
           <p-card class="col-3 p-card-4">
             <i
               class="pi pi-user-plus bg-purple-500 text-white p-3 border-circle"
             ></i>
-            <h3>8</h3>
-            <p class="m-0">New Customer</p>
-            <p class="m-0">+0.5% from yesterday</p>
+            <h3 class="m-2 heading">8</h3>
+            <p class="m-2 middlecontent">New Customer</p>
+            <p class="m-2 bluetext">+0.5% from yesterday</p>
           </p-card>
         </div>
       </p-panel>
@@ -104,37 +109,40 @@
           <h3 class="m-0">Top Products</h3>
         </div>
         <p-table
-          [columns]="cols"
           [value]="tableData"
           [tableStyle]="{ 'min-width': '50rem' }"
           [scrollable]="true"
           scrollHeight="300px"
         >
-          <ng-template pTemplate="header" let-columns>
+          <ng-template pTemplate="header">
             <tr>
-              <th *ngFor="let col of columns">
-                {{ col.header }}
-              </th>
+              <th>#</th>
+              <th>Name</th>
+              <th>Popularity</th>
+              <th>Sales</th>
             </tr>
           </ng-template>
-          <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <ng-template pTemplate="body" let-product>
             <tr>
-              <td *ngFor="let col of columns">
-                <ng-container
-                  *ngIf="col.field !== 'popularity' && col.field !== 'sales'"
+              <td>{{ product.id }}</td>
+              <td>{{ product.name }}</td>
+              <td>
+                <p-progressBar
+                  [value]="product.popularity"
+                  [ngClass]="getClasses(product.id)"
                 >
-                  {{ rowData[col.field] }}
-                </ng-container>
-                <ng-container *ngIf="col.field === 'popularity'">
-                  <p-progressBar [value]="rowData[col.field]">
-                    <ng-template pTemplate="content" let-value> </ng-template>
-                  </p-progressBar>
-                </ng-container>
-                <ng-container *ngIf="col.field === 'sales'">
-                  <button pButton [disabled]="true">
-                    {{ rowData[col.field] }}%
-                  </button>
-                </ng-container>
+                  <ng-template pTemplate="content" let-value> </ng-template>
+                </p-progressBar>
+              </td>
+
+              <td>
+                <button
+                  [ngClass]="getButtonClasses(product.id)"
+                  pButton
+                  [ngStyle]="{ 'pointer-events': 'none' }"
+                >
+                  {{ product.sales }}%
+                </button>
               </td>
             </tr>
           </ng-template>

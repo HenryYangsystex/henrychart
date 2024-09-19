@@ -10,7 +10,7 @@
     ],
     "datasets": [
         {
-            "label": "First Dataset",
+            "label": "Last Month",
             "data": [
                 65,
                 59,
@@ -20,12 +20,13 @@
                 55,
                 40
             ],
-            "fill": false,
+            "fill": true,
             "borderColor": "--blue-500",
-            "tension": 0.4
+            "tension": 0.4,
+            "backgroundColor": "--blue-100"
         },
         {
-            "label": "Second Dataset",
+            "label": "This Month",
             "data": [
                 28,
                 48,
@@ -35,9 +36,10 @@
                 27,
                 90
             ],
-            "fill": false,
-            "borderColor": "--pink-500",
-            "tension": 0.4
+            "fill": true,
+            "borderColor": "--green-500",
+            "tension": 0.4,
+            "backgroundColor": "--green-100"
         }
     ]
 }
