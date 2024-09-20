@@ -108,6 +108,7 @@ export class FirstComponent {
           dataset.backgroundColor = documentStyle.getPropertyValue(
             dataset.backgroundColor
           );
+          dataset.pointBackgroundColor = dataset.borderColor;
         });
       });
 
@@ -116,6 +117,9 @@ export class FirstComponent {
         this.visitorData.datasets.forEach((dataset: any) => {
           dataset.borderColor = documentStyle.getPropertyValue(
             dataset.borderColor
+          );
+          dataset.backgroundColor = documentStyle.getPropertyValue(
+            dataset.backgroundColor,
           );
         });
       });
@@ -126,6 +130,7 @@ export class FirstComponent {
           legend: {
             position: 'bottom',
             labels: {
+              usePointStyle: true,
               color: textColor,
             },
           },
@@ -140,14 +145,13 @@ export class FirstComponent {
           legend: {
             position: 'bottom',
             labels: {
+              usePointStyle: true,
               color: textColor,
             },
           },
         },
         scales: {
           x: {
-            // barPercentage: 2,
-            // categoryPercentage: 0.5,
             ticks: {
               color: textColorSecondary,
               font: {
@@ -177,6 +181,7 @@ export class FirstComponent {
           legend: {
             position: 'bottom',
             labels: {
+              usePointStyle: true,
               color: textColor,
               usePointStyle: true,
               pointStyle: 'line',
@@ -210,6 +215,9 @@ export class FirstComponent {
           legend: {
             position: 'bottom',
             labels: {
+              boxWidth: 20,
+              boxHeight: 20,
+              padding: 10,
               color: textColor,
             },
           },
