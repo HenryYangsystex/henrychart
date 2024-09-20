@@ -31,7 +31,8 @@
             ],
             "fill": false,
             "borderColor": "--blue-500",
-            "tension": 0.4
+            "tension": 0.4,
+            "backgroundColor": "--blue-500"
         },
         {
             "label": "New Customers",
@@ -51,7 +52,8 @@
             ],
             "fill": false,
             "borderColor": "--pink-500",
-            "tension": 0.4
+            "tension": 0.4,
+            "backgroundColor": "--pink-500"
         },
         {
             "label": "Unique Customers",
@@ -71,7 +73,8 @@
             ],
             "fill": false,
             "borderColor": "--green-500",
-            "tension": 0.4
+            "tension": 0.4,
+            "backgroundColor": "--green-500"
         }
     ]
 }
