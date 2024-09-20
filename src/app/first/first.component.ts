@@ -178,6 +178,8 @@ export class FirstComponent {
             position: 'bottom',
             labels: {
               color: textColor,
+              usePointStyle: true,
+              pointStyle: 'line',
             },
           },
         },
