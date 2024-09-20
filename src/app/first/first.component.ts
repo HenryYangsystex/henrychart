@@ -119,7 +119,7 @@ export class FirstComponent {
             dataset.borderColor
           );
           dataset.backgroundColor = documentStyle.getPropertyValue(
-            dataset.backgroundColor,
+            dataset.backgroundColor
           );
         });
       });
@@ -183,7 +183,6 @@ export class FirstComponent {
             labels: {
               usePointStyle: true,
               color: textColor,
-              usePointStyle: true,
               pointStyle: 'line',
             },
           },
