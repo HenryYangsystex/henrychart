@@ -13,7 +13,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { TagModule } from 'primeng/tag';
-import { ChartOptions, Chart } from 'chart.js'; // Import Chart
+
 @Component({
   selector: 'app-first',
   standalone: true,
@@ -119,7 +119,7 @@ export class FirstComponent {
             dataset.borderColor,
           );
           dataset.backgroundColor = documentStyle.getPropertyValue(
-            dataset.backgroundColor
+            dataset.backgroundColor,
           );
         });
       });
@@ -211,17 +211,6 @@ export class FirstComponent {
         maintainAspectRatio: false,
         aspectRatio: 1,
         plugins: {
-          annotation: {
-            annotations: {
-              line1: {
-                type: 'line',
-                yMin: 60,
-                yMax: 60,
-                borderColor: 'rgb(255, 99, 132)',
-                borderWidth: 2,
-              },
-            },
-          },
           legend: {
             position: 'bottom',
             labels: {
