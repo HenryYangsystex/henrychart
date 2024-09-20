@@ -12,6 +12,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
+import { TagModule } from 'primeng/tag';
 
 @Component({
   selector: 'app-first',
@@ -28,6 +29,7 @@ import { InputTextModule } from 'primeng/inputtext';
     InputTextModule,
     IconFieldModule,
     InputIconModule,
+    TagModule,
   ],
   templateUrl: './first.component.html',
   styleUrl: './first.component.scss',
@@ -57,7 +59,7 @@ export class FirstComponent {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private dataService: DataService,
+    private dataService: DataService
   ) {}
 
   ngOnInit() {
@@ -77,7 +79,7 @@ export class FirstComponent {
       const documentStyle = getComputedStyle(document.documentElement);
       const textColor = documentStyle.getPropertyValue('--text-color');
       const textColorSecondary = documentStyle.getPropertyValue(
-        '--text-color-secondary',
+        '--text-color-secondary'
       );
       const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
@@ -89,10 +91,10 @@ export class FirstComponent {
         this.verticalBarData = data;
         this.verticalBarData.datasets.forEach((dataset: any) => {
           dataset.backgroundColor = documentStyle.getPropertyValue(
-            dataset.backgroundColor,
+            dataset.backgroundColor
           );
           dataset.borderColor = documentStyle.getPropertyValue(
-            dataset.borderColor,
+            dataset.borderColor
           );
         });
       });
@@ -101,10 +103,10 @@ export class FirstComponent {
         this.customerData = data;
         this.customerData.datasets.forEach((dataset: any) => {
           dataset.borderColor = documentStyle.getPropertyValue(
-            dataset.borderColor,
+            dataset.borderColor
           );
           dataset.backgroundColor = documentStyle.getPropertyValue(
-            dataset.backgroundColor,
+            dataset.backgroundColor
           );
           dataset.pointBackgroundColor = dataset.borderColor;
         });
@@ -114,7 +116,7 @@ export class FirstComponent {
         this.visitorData = data;
         this.visitorData.datasets.forEach((dataset: any) => {
           dataset.borderColor = documentStyle.getPropertyValue(
-            dataset.borderColor,
+            dataset.borderColor
           );
           dataset.backgroundColor = documentStyle.getPropertyValue(
             dataset.backgroundColor,
