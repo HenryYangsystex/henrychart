@@ -48,11 +48,19 @@
     background-color: #ffd0ce;
     border-radius: 12px;
   }
+
+  .p-card {
+    box-shadow: none;
+  }
 }
 ::ng-deep .p-card-2 {
   .p-card-body {
     background-color: #feddc7;
     border-radius: 12px;
+  }
+
+  .p-card {
+    box-shadow: none;
   }
 }
 ::ng-deep .p-card-3 {
@@ -60,11 +68,19 @@
     background-color: #caf1d8;
     border-radius: 12px;
   }
+
+  .p-card {
+    box-shadow: none;
+  }
 }
 ::ng-deep .p-card-4 {
   .p-card-body {
     background-color: #ead6fd;
     border-radius: 12px;
+  }
+
+  .p-card {
+    box-shadow: none;
   }
 }
 ::ng-deep .p-progressbar {

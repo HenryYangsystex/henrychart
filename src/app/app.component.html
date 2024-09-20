@@ -2,9 +2,9 @@
   <div class="col-2">
     <div class="flex justify-content-center">
       <div class="top-0 fixed">
-        <div class="flex justify-content-center py-4 top-0">
+        <div class="flex py-4 top-0">
           <img alt="sideBar Header LOGO" src="images/dummylogo.png" />
-          <div class="align-self-center ml-3 text-2xl font-bold">Dabang</div>
+          <div class="align-self-center text-2xl font-bold ml-4">Dabang</div>
         </div>
 
         <!-- SideBar Item -->
@@ -12,7 +12,7 @@
           <a
             *ngFor="let item of items; let first = first"
             href="/Dashboard"
-            class="w-full flex border-round-2xl py-3 px-4 my-2 cursor-pointer no-underline side-bar-item-font"
+            class="flex border-round-2xl py-3 px-5 my-2 no-underline side-bar-item-font"
             [ngClass]="{ 'side-bar-item-active-color': first }"
           >
             <i [class]="item.icon"></i>

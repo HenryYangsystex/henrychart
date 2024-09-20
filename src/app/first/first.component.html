@@ -1,10 +1,10 @@
 <div class="bg-white top-0 sticky z-1">
-  <div class="flex justify-content-between align-items-center p-3">
+  <div class="flex justify-content-between align-items-center py-1 px-3">
     <h2 class="text-2xl">Dashboard</h2>
     <p-iconField iconPosition="left">
       <p-inputIcon styleClass="pi pi-search text-primary font-bold" />
       <input
-        class="border-0"
+        class="border-0 bg-gray-100"
         type="text"
         pInputText
         placeholder="Search here..."
@@ -16,8 +16,8 @@
 <div class="p-3">
   <div class="grid">
     <div class="col-7">
-      <p-panel class="p-3" [showHeader]="false">
-        <div class="flex justify-content-between align-items-center">
+      <div class="p-4 border-round-2xl bg-white h-full align-content-center">
+        <div class="flex justify-content-between align-items-center mb-4">
           <div>
             <h3 class="m-0">Today's Sales</h3>
             <p>Sales Summary</p>
@@ -31,7 +31,7 @@
           ></button>
         </div>
         <div class="grid">
-          <p-card class="col-3 p-card-1" [style]="{ height: '150px' }">
+          <p-card class="col-3 p-card-1">
             <i
               class="pi pi-chart-bar bg-red-500 text-white p-3 border-circle"
             ></i>
@@ -62,61 +62,43 @@
             <p class="m-2 bluetext">+0.5% from yesterday</p>
           </p-card>
         </div>
-      </p-panel>
+      </div>
     </div>
     <div class="col-5">
-      <p-panel class="p-3" [showHeader]="false">
-        <div class="flex justify-content-between align-items-center">
-          <h3 class="m-0">Visitor Insights</h3>
-        </div>
-        <div>
-          <p-chart
-            width="400"
-            type="line"
-            [data]="visitorData"
-            [options]="visitorOptions"
-          />
-        </div>
-      </p-panel>
+      <div class="p-4 border-round-2xl bg-white h-full">
+        <h3 class="m-0 mb-3">Visitor Insights</h3>
+        <p-chart
+          width="400"
+          type="line"
+          [data]="visitorData"
+          [options]="visitorOptions"
+        />
+      </div>
     </div>
-  </div>
-  <div class="grid">
     <div class="col-5">
-      <p-panel class="p-3" [showHeader]="false">
-        <div class="flex justify-content-between align-items-center">
-          <h3 class="m-0">Total Revenue</h3>
-        </div>
-        <div class="card flex justify-content-center">
-          <p-chart
-            type="bar"
-            [data]="verticalBarData"
-            [options]="verticalBarOptions"
-            class="p-chart-w-full"
-          />
-        </div>
-      </p-panel>
+      <div class="p-4 border-round-2xl bg-white h-full">
+        <h3 class="m-0 mb-3">Total Revenue</h3>
+        <p-chart
+          type="bar"
+          [data]="verticalBarData"
+          [options]="verticalBarOptions"
+          class="p-chart-w-full"
+        />
+      </div>
     </div>
     <div class="col-7">
-      <p-panel class="p-3" [showHeader]="false">
-        <div class="flex justify-content-between align-items-center">
-          <h3 class="m-0">Customer Satisfaction</h3>
-        </div>
-        <div>
-          <p-chart
-            type="line"
-            [data]="customerData"
-            [options]="customerOptions"
-          />
-        </div>
-      </p-panel>
+      <div class="p-4 border-round-2xl bg-white h-full">
+        <h3 class="m-0 mb-3">Customer Satisfaction</h3>
+        <p-chart
+          type="line"
+          [data]="customerData"
+          [options]="customerOptions"
+        />
+      </div>
     </div>
-  </div>
-  <div class="grid">
     <div class="col-9">
-      <p-panel class="p-3" [showHeader]="false">
-        <div class="flex justify-content-between align-items-center">
-          <h3 class="m-0">Top Products</h3>
-        </div>
+      <div class="p-4 border-round-2xl bg-white h-full">
+        <h3 class="m-0 mb-3">Top Products</h3>
         <p-table
           [value]="tableData"
           [tableStyle]="{ 'min-width': '50rem' }"
@@ -125,10 +107,10 @@
         >
           <ng-template pTemplate="header">
             <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Popularity</th>
-              <th>Sales</th>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Popularity</th>
+              <th scope="col">Sales</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-product>
@@ -156,21 +138,17 @@
             </tr>
           </ng-template>
         </p-table>
-      </p-panel>
+      </div>
     </div>
     <div class="col-3">
-      <p-panel class="p-3" [showHeader]="false">
-        <div class="flex justify-content-between align-items-center">
-          <h3 class="m-0">Hire vs Cancel</h3>
-        </div>
-        <div class="card flex justify-content-center">
-          <p-chart
-            type="doughnut"
-            [data]="doughnutData"
-            [options]="doughnutOptions"
-          />
-        </div>
-      </p-panel>
+      <div class="p-4 border-round-2xl bg-white h-full text-center">
+        <h3 class="m-0 mb-3">Hire vs Cancel</h3>
+        <p-chart
+          type="doughnut"
+          [data]="doughnutData"
+          [options]="doughnutOptions"
+        />
+      </div>
     </div>
   </div>
 </div>
